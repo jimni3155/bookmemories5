@@ -31,7 +31,7 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
             imageItem.addEventListener('dblclick', function() {
                 clearTimeout(clickTimeout);
                 showSavedContent(this);
-            });//저장한 내용 보여줌
+            });
             
             //이미지 배치 최대 5개까지로 일단 함
             let shelves = document.getElementsByClassName('shelf');
@@ -119,8 +119,6 @@ function displaySavedContent(content) {
     </div>
     `;
     savedContentContainer.style.display = 'block';
-
-    // 중앙에 위치시키기
     savedContentContainer.style.position = 'fixed';
     savedContentContainer.style.left = '50%';
     savedContentContainer.style.top = '50%';
@@ -154,7 +152,6 @@ menuButton.addEventListener('click', function(event) {
 // 메뉴 내 링크 클릭 시 페이지 이동 허용 (따로 처리할 필요 없이 기본 동작)
 document.querySelectorAll('.dropdown-menu a').forEach(link => {
     link.addEventListener('click', function(event) {
-        // 링크가 클릭되면 메뉴가 닫히도록 설정
         dropdownMenu.classList.remove('active');
     });
 });
@@ -166,10 +163,10 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// 닫기 버튼 기능
+// 닫기 버튼
 document.querySelector('.close').addEventListener('click', function() {
     document.getElementById('formContainer').style.display = 'none';
-    resetForm(); // 폼 필드를 초기화하는 함수
+    resetForm(); 
 });
 
 // 폼 바깥 클릭 시 닫기
